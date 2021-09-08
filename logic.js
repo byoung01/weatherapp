@@ -56,6 +56,8 @@ var geoCode = "http://api.openweathermap.org/geo/1.0/direct?";
 var oneCall = "https://api.openweathermap.org/data/2.5/onecall?";
 // lat={lat}&lon={lon}&exclude={part}&appid={API key}
 function searchWeather(city) {
+  localStorage.setItem("city", JSON.stringify(city));
+  listCity();
   const params = new URLSearchParams({ q: city, appid: apikey });
   fetch(geoCode + params)
     .then((response) => response.json())
@@ -77,7 +79,6 @@ function searchWeather(city) {
 //trying to access the icons from openweathers website
 // using the numbers provided from "icon"
 function bgColor(icon) {
-  debugger;
   if (icon === "01d" || "01n") {
     icon.src = "http://openweathermap.org/img/wn/01d@2x.png";
   }
@@ -241,9 +242,26 @@ form.addEventListener("submit", function (e) {
   // populate our weather details
 });
 recentSearches.addEventListener("click", function (e) {
+  debugger;
   const target = e.target;
   if (!target.matches("button")) return;
+  if (target.matches("button")) {
+    "button".innerHTML = city;
+    console.log(city);
+    buildDash(city);
+  }
   // Retrieve the city name from the button.textContent
   // Fetch weather data
   // populate our weather details
 });
+//getting city name from local storage
+function listCity() {
+  var city = JSON.parse(localStorage.getItem("city"));
+  // creating a new button under the recent searches id
+  var button = document.createElement("button");
+  button.append(city);
+  //added class with bootstrap button elements to match existing Buttons
+  button.classList.add("class", "btn", "btn-secondary", "w-100", "mb-2");
+  //restated variable as a couldnt get it to inn the window
+  document.querySelector("#recent-searches").append(button);
+}
