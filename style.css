@@ -1,0 +1,30 @@
+#today-weather {
+  width: 100%;
+}
+li {
+  padding: 7px 0px 7px 0px;
+  list-style-type: none;
+}
+ul {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+#forecast-box {
+  background-color: gray;
+  color: white;
+  font-size: 15px;
+}
+.container {
+  margin: 0;
+  max-width: 100%;
+}
+#main-uv {
+  width: 12%;
+}
+
+@media (max-width: 680px) {
+  #forecast {
+    display: flex;
+    flex-direction: column;
+  }
+}

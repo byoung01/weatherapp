@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="text-center bg-dark bg-gradient text-white p-4">
+        Weather Dashboard
+      </h1>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <form id="search-weather" class="border-bottom pb-3">
+            <div class="mb-3">
+              <label for="city-name" class="form-label"
+                ><h3>Search for City</h3></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="city-name"
+                placeholder="City Name"
+                value="tucson"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+          <div id="recent-searches" class="mt-2">
+            <button class="btn btn-secondary w-100 mb-2">Temecula</button>
+            <button class="btn btn-secondary w-100">Phoenix</button>
+          </div>
+        </div>
+        <!-- End Left Column -->
+        <div class="col-md-9">
+          Weather Details
+          <ul id="today-weather" class="col-md-9 border border-secondary">
+            <li id="main-date"></li>
+            <li id="main-temp"></li>
+            <li id="main-wind-speed"></li>
+            <li id="main-humidity"></li>
+            <li id="main-uv"></li>
+          </ul>
+          <div id="forecast" class="d-flex justify-content-between">
+            <ul id="forecast-box" class="col-md-2">
+              <li id="date1-date"></li>
+              <li id="date1-icon"></li>
+              <li id="date1-temp"></li>
+              <li id="date1-wind-speed"></li>
+              <li id="date1-humidity"></li>
+            </ul>
+            <ul id="forecast-box" class="col-md-2">
+              <li id="date2-date"></li>
+              <li id="date2-icon"></li>
+              <li id="date2-temp"></li>
+              <li id="date2-wind-speed"></li>
+              <li id="date2-humidity"></li>
+            </ul>
+            <ul id="forecast-box" class="col-md-2">
+              <li id="date3-date"></li>
+              <li id="date3-icon"></li>
+              <li id="date3-temp"></li>
+              <li id="date3-wind-speed"></li>
+              <li id="date3-humidity"></li>
+            </ul>
+            <ul id="forecast-box" class="col-md-2">
+              <li id="date4-date"></li>
+              <li id="date4-icon"></li>
+              <li id="date4-temp"></li>
+              <li id="date4-wind-speed"></li>
+              <li id="date4-humidity"></li>
+            </ul>
+            <ul id="forecast-box" class="col-md-2">
+              <li id="date5-date"></li>
+              <li id="date5-icon"></li>
+              <li id="date5-temp"></li>
+              <li id="date5-wind-speed"></li>
+              <li id="date5-humidity"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    ​
+    <script src="logic.js"></script>
+  </body>
+</html>
